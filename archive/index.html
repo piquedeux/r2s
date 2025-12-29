@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="de,eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R2S - Archive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'DM Sans', sans-serif;
+            background-color: white;
+        }
+        .header {
+            width: 100%;
+            padding: 10px;
+            background-color: white;
+            border-bottom: 2px solid black;
+            text-align: left;
+            font-family: 'Pinyon Script', cursive;
+            font-size: 36px;
+            color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .navbar {
+            position: fixed;
+            top: 10px;
+            right: 0;
+            padding: 10px 20px;
+            background-color: white;
+            border: 2px solid black;
+            font-size: 16px;
+            z-index: 1002;
+            margin-right: 10px;
+        }
+        .navbar a {
+            margin-left: 20px;
+            font-family: 'Pinyon Script', cursive;
+            text-decoration: none;
+            color: black;
+        }
+        .navbar a:hover {
+            color: red;
+        }
+        .content {
+            padding: 80px 20px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .product-container {
+            width: 90%;
+            max-width: 800px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .product-title {
+            width: 100%;
+            background-color: white;
+            text-align: center;
+            font-family: 'Pinyon Script', cursive;
+            font-size: 24px;
+            padding: 10px 0;
+        }
+        .carousel {
+            width: 100%;
+            max-width: auto;
+            position: relative;
+        }
+        .carousel img {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+        .carousel img.active {
+            display: block;
+        }
+        .carousel .prev, .carousel .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: black;
+            border: none;
+            background-color: transparent;
+            font-size: 18px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .carousel .prev {
+            left: 10px;
+        }
+        .carousel .next {
+            right: 10px;
+        }
+        .footer {
+            padding: 10px 0;
+            font-family: 'DM Sans', sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: italic;
+            text-align: left;
+            color: black;
+            font-size: 10px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Archive</div>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="https://r2s.bigcartel.com">Shop</a>
+        <a href="/about">About</a>
+    </div>
+    <div class="content">
+        <div class="product-container">
+            <div class="product-title">Snapshots</div>
+            <div class="carousel">
+                <img src="https://raw.githubusercontent.com/refuse2sink/material/main/2171FFD1-25C3-4CFA-A078-DDA34BBAB8BD.jpg" alt="Image 1" class="active">
+                <img src="https://raw.githubusercontent.com/refuse2sink/material/main/BAB1B820-B2F8-4F44-91DE-A5C9F4F4ACC8.jpg" alt="Image 2">
+                <img src="https://raw.githubusercontent.com/refuse2sink/material/main/IMG_3053.JPG" alt="Image 3">
+                <img src="https://raw.githubusercontent.com/refuse2sink/material/main/IMG_4145.JPG" alt="Image 4">
+                <img src="https://raw.githubusercontent.com/refuse2sink/material/main/IMG_3386.JPG" alt="Image 5">
+                <img src="https://raw.githubusercontent.com/refuse2sink/material/main/IMG_3446.JPG" alt="Image 6">
+                <button class="prev">&lt;</button>
+                <button class="next">&gt;</button>
+            </div>
+        </div>
+        <div class="product-container">
+            <div class="product-title">Contemporary Art</div>
+            <div class="carousel">
+                <img src="https://raw.githubusercontent.com/refuse2sink/material/main/IMG_3801.JPG" alt="Image 1" class="active">
+                <img src="https://raw.githubusercontent.com/refuse2sink/material/main/IMG_3893.JPG" alt="Image 2">
+                <img src="https://raw.githubusercontent.com/refuse2sink/material/main/IMG_3791.JPG" alt="Image 3">
+                <img src="https://raw.githubusercontent.com/refuse2sink/material/main/IMG_3798.JPG" alt="Image 4">
+                <button class="prev">&lt;</button>
+                <button class="next">&gt;</button>
+            </div>
+        </div>
+        <div class="product-container">
+            <div class="product-title">Branding</div>
+            <div class="carousel">
+                <img src="https://raw.githubusercontent.com/refuse2sink/material/main/IMG_4281.JPG" alt="Image 1" class="active">
+                <img src="https://raw.githubusercontent.com/refuse2sink/material/main/IMG_4287.JPG" alt="Image 2">
+                <img src="https://raw.githubusercontent.com/refuse2sink/material/main/Unbenannt.png" alt="Image 3">
+                <button class="prev">&lt;</button>
+                <button class="next">&gt;</button>
+            </div>
+         </div>
+     <div class="product-container">
+            <div class="product-title">Samples</div>
+            <div class="carousel">
+                <img src="https://raw.githubusercontent.com/refuse2sink/material/main/IMG_4577.JPG" alt="Image 1" class="active">
+                <img src="https://raw.githubusercontent.com/refuse2sink/material/main/IMG_4579.JPG" alt="Image 2">
+                <img src="https://raw.githubusercontent.com/refuse2sink/material/main/IMG_4318.PNG" alt="Image 3">
+                <img src="https://raw.githubusercontent.com/refuse2sink/material/main/IMG_4435.PNG" alt="Image 3">
+                <img src="https://raw.githubusercontent.com/refuse2sink/material/main/Unbenannt-1.jpg" alt="Image 3">
+                <button class="prev">&lt;</button>
+                <button class="next">&gt;</button>
+            </div>
+         </div>
+        <div class="product-container">
+            <div class="product-title">Attention</div>
+            <div class="carousel">
+                <img src="https://raw.githubusercontent.com/refuse2sink/material/main/9badeb426ba9a5a113ad679a891dc737.jpg" alt="Image 1" class="active">
+                <img src="https://raw.githubusercontent.com/refuse2sink/material/main/9b0b90993849b0471b4c2fe7a580628e.jpg" alt="Image 2">
+                <img src="https://raw.githubusercontent.com/refuse2sink/material/main/2ff4908a3f91d5fb8fb2001cdf16c2b0.jpg" alt="Image 3">
+                <img src="https://raw.githubusercontent.com/refuse2sink/material/main/9e547d5bd5879fce5cf8e38d23e292f6.jpg" alt="Image 4">
+                <img src="https://raw.githubusercontent.com/refuse2sink/material/main/c159e81634934c8d0af1fb5c53f3238f.jpg" alt="Image 5">
+                <img src="https://raw.githubusercontent.com/refuse2sink/material/main/c621eecbb8c428db5af5d4508538d8da.jpg" alt="Image 6">
+                <img src="https://raw.githubusercontent.com/refuse2sink/material/main/eb2ef3aa1dd07bf54d8e7cc6f2673029.jpg" alt="Image 7">
+                <button class="prev">&lt;</button>
+                <button class="next">&gt;</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        &copy; R2S. All rights reserved.
+    </div>
+    <script>
+        const carousels = document.querySelectorAll('.carousel');
+        
+        carousels.forEach(carousel => {
+            let currentIndex = 0;
+            const images = carousel.querySelectorAll('img');
+            const prevButton = carousel.querySelector('.prev');
+            const nextButton = carousel.querySelector('.next');
+            
+            function showImage(index) {
+                images.forEach((img, i) => {
+                    img.classList.toggle('active', i === index);
+                });
+            }
+
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+                showImage(currentIndex);
+            });
+
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+                showImage(currentIndex);
+            });
+        });
+    </script>
+</body>
+</html>
