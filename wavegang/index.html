@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wave Gang (International)</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+<link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Burberry_pattern.svg/335px-Burberry_pattern.svg.png">
+<style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Dark mode */
+        body.dark-mode {
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+        }
+
+        /* Light mode */
+        body.light-mode {
+            background-color: #fff; /* White background */
+            color: #000; /* Black text */
+        }
+
+        .wave-container {
+            text-align: center;
+            line-height: 1.5;
+            margin-top: 20px; /* Added margin above text */
+        }
+
+        .wave-container .wave {
+            font-size: 2rem;
+            letter-spacing: 0.2rem;
+        }
+
+        .wave-container h1 {
+            font-size: 3rem;
+            margin: 0.5rem 0;
+            font-family: 'Cormorant', italic; 
+        }
+
+        .wave-container .subtitle {
+            font-size: 1.2rem;
+        }
+
+        /* Music player styling */
+        .player {
+            margin-top: 20px;
+            width: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #333; /* Dark background for player */
+            padding: 10px;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+
+        /* Lighter player background in light mode */
+        body.light-mode .player {
+            background-color: #ddd; /* Light gray for contrast in light mode */
+        }
+
+        .progress-container {
+            width: 100%;
+            background: #555; /* Gray background for progress bar */
+            border-radius: 5px;
+            margin: 0 10px;
+            height: 10px;
+            position: relative;
+        }
+
+        .progress-bar {
+            background: red; /* Red accent for progress bar */
+            width: 0%;
+            height: 100%;
+            border-radius: 5px;
+            transition: width 0.2s ease-in;
+        }
+
+        #play-pause {
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        /* Play button in dark mode */
+        body.dark-mode #play-pause {
+            color: white;
+        }
+
+        /* Play button in light mode */
+        body.light-mode #play-pause {
+            color: black;
+        }
+
+        /* Bars animation */
+        .bar-container {
+            display: flex;
+            gap: 5px;
+            margin-left: 10px;
+        }
+
+        .bar {
+            width: 10px;
+            height: 50px;
+            background-color: red;
+            transform-origin: bottom;
+            animation: none;
+        }
+
+        @keyframes barMove {
+            0% { transform: scaleY(0.2); }
+            50% { transform: scaleY(1); }
+            100% { transform: scaleY(0.2); }
+        }
+
+        /* Typing animation for lyrics */
+        .lyrics {
+            width: 80%;
+            margin-top: 20px;
+            font-size: 1rem;
+            text-align: center;
+            white-space: pre-wrap;
+            overflow: hidden; /* Hide the overflow until text is "typed" */
+            visibility: hidden; /* Start hidden */
+            padding: 10px;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="wave-container">
+    <!-- Added 3 <br> tags for spacing -->
+    <br><br><br>
+    <div class="wave">( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</div>
+    <div class="wave">( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</div>
+    <h1>WAVEGANG</h1>
+    <div class="wave">( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</div>
+    <div class="wave">( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</div>
+    <p class="subtitle">(International)</p>
+</div>
+
+<!-- Music player section -->
+<div class="player">
+    <button id="play-pause">Play</button>
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <div class="bar-container">
+        <div class="bar" id="bar1"></div>
+        <div class="bar" id="bar2"></div>
+        <div class="bar" id="bar3"></div>
+    </div>
+</div>
+
+<audio id="audio-player" src="https://raw.githubusercontent.com/refuse2sink/wavegang/main/waveganghymne.mp3"></audio>
+
+<!-- Song Lyrics -->
+<div class="lyrics" id="lyrics">
+    <p>It feels so far I can't have it Reach up to the stars it got me feeling I could grab it</p>
+    <p>I feel so wrong, I'm right passed it Put all of my feelings in a blunt then I ashed it</p>
+    <p>You know I can stand this I'm losing my balance Running from myself is only giving me a callus</p>
+    <p>Sticking to myself and I ain't worrying about it You ain't sticking to the code You put it in it's invalid.</p>
+    <p>Crawling through the basement to make it to the attic I ain't worried bout the time I'm still gon shine without a Patek</p>
+    <p>I just put my WTAPS on I'm moving tactic They can push me to the side, I know I'm still your main attraction</p>
+    <p>All the way down to the atoms I know it don't really matter I'm just tryna stay afloat without a paddle</p>
+    <p>I been so damn high I can't come down without a ladder They gon keep on talking I lose signal through the chatter</p>
+    <p>My mind keep on racing like a horse so where the lasso This place is filled with animals it feel like Camp Lazlo</p>
+    <p>I thought you were my Cassie got me feeling like a asshole Now I swim in my emotion In my feelings doin back strokes</p>
+</div>
+
+<script>
+    const audioPlayer = document.getElementById('audio-player');
+    const playPauseBtn = document.getElementById('play-pause');
+    const progressBar = document.getElementById('progress-bar');
+    const lyrics = document.getElementById('lyrics');
+    const bars = [document.getElementById('bar1'), document.getElementById('bar2'), document.getElementById('bar3')];
+
+    let isPlaying = false;
+    let lyricsTimer;
+
+    // Function to animate bars
+    function startBarAnimation() {
+        bars.forEach((bar) => {
+            bar.style.animation = `barMove ${Math.random() * 0.7 + 0.3}s infinite`;
+        });
+    }
+
+    function stopBarAnimation() {
+        bars.forEach((bar) => {
+            bar.style.animation = 'none';
+        });
+    }
+
+    playPauseBtn.addEventListener('click', function() {
+        if (!isPlaying) {
+            audioPlayer.play();
+            playPauseBtn.textContent = 'Pause';
+            isPlaying = true;
+            startBarAnimation();
+            setTimeout(() => {
+                lyrics.style.visibility = 'visible';
+                startTypingAnimation();
+            }, audioPlayer.duration * 0.20 * 1000); // Delay lyrics start after 1/4 of the audio
+        } else {
+            audioPlayer.pause();
+            playPauseBtn.textContent = 'Play';
+            isPlaying = false;
+            stopBarAnimation();
+            clearTimeout(lyricsTimer);
+        }
+    });
+
+    // Update progress bar as the music plays
+    audioPlayer.addEventListener('timeupdate', function() {
+        const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        progressBar.style.width = progress + '%';
+    });
+
+    // Function to display lyrics with typing animation
+    function startTypingAnimation() {
+        const totalDuration = audioPlayer.duration * 1000; // Total duration of audio in ms
+        const lyricsText = lyrics.innerHTML.replace(/<p>/g, '').replace(/<\/p>/g, ' ');  // Remove paragraph tags for cleaner typing
+        lyrics.innerHTML = '';  // Clear the lyrics container
+        let currentIndex = 0;
+
+        function type() {
+            if (currentIndex < lyricsText.length) {
+                lyrics.innerHTML += lyricsText.charAt(currentIndex);  // Add one character at a time
+                currentIndex++;
+                const typingSpeed = (totalDuration - (totalDuration * 0.25)) / lyricsText.length;  // Adjust typing duration
+                lyricsTimer = setTimeout(type, typingSpeed);  // Call type recursively
+            }
+        }
+
+        type();  // Start typing
+    }
+
+    // Detect light or dark mode and apply appropriate theme
+    function detectTheme() {
+        const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (isDarkMode) {
+            document.body.classList.add('dark-mode');
+            document.body.classList.remove('light-mode');
+        } else {
+            document.body.classList.add('light-mode');
+            document.body.classList.remove('dark-mode');
+        }
+    }
+
+    // Apply theme on load
+    detectTheme();
+
+    // Listen for changes in theme
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', detectTheme);
+</script>
+
+</body>
+</html>
