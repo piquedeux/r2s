@@ -1,0 +1,308 @@
+<!--
+ __  __       ____  
+|  \/  |     / ___| 
+| \  / |    | | __  
+| |\/| |    | |(  | 
+| |  | |  _ | |_) |  _ 
+(_)  (_) (_) \____| (_)
+
+--> 
+<!DOCTYPE html>
+    <html lang="de,eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>R2S - Home</title>
+        <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <style>
+            body {
+                margin: 0;
+                padding: 20px;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                max-width: 100%;
+                background: url('https://raw.githubusercontent.com/fc4022/fc4022.github.io/main/background-1.jpg') no-repeat center center fixed;
+                background-size: 100% 100%;
+                font-family: 'Pinyon Script', cursive;
+                cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black"><circle cx="12" cy="12" r="10"/></svg>') 12 12, auto;
+                overflow: hidden;
+                position: relative;
+            }
+            .button {
+                color: white;
+                padding: 10px 20px;
+                font-family: "DM Sans", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 200;
+                font-style: normal;
+                font-size: 48px;
+                text-align: center;
+                text-decoration: none;
+                cursor: pointer;
+                display: inline-block;
+                transition: text-shadow 0.3s ease;
+            }
+            .button:hover {
+                text-shadow: 0 0 10px lightblue, 0 0 20px pink;
+            }
+ .overlay2 {
+    display: none;
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: calc(100% - 100px);
+    z-index: 1001;
+    overflow-y: auto;
+}
+
+.overlay2-content {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    min-height: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+            .close-overlay2 {
+                position: absolute;
+                top: 40px;
+                right: 40px;
+                color: black;
+                font-size: 36px;
+                text-decoration: none;
+                padding: 20px;
+                cursor: pointer;
+                z-index: 1;
+            }
+            .close-overlay2:hover {
+                color: red;
+            }
+            .image-container {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .image-content {
+                width: 100%;
+                max-width: 500px;
+                min-width: 300px;
+                margin: 1px;
+                padding: 40px;
+                border: 0;
+            }
+            .navbar {
+                position: fixed;
+                top: 10px;
+                right: 0;
+                padding: 10px 10px;
+                background-color: white;
+                border: 2px solid black;
+                font-size: 16px;
+                z-index: 1002;
+                margin-right: 10px;
+                justify-content: center;
+                text-align: center;
+            }
+            .navbar a {
+                margin: 10px 20px;
+                text-decoration: none;
+                color: black;
+            }
+            .navbar a:hover {
+                color: red;
+            }
+            .footer {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                padding: 10px 0;
+                font-family: "DM Sans", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 300;
+                font-style: italic;
+                text-align: left;
+                color: white;
+                font-size: 10px;
+                z-index: 1;
+                margin-left: 10px;
+            }
+            }
+            .footer:hover {
+            color: red;
+                        }
+            .rain {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                overflow: hidden;
+                z-index: 0;
+                opacity: 0.3;
+            }
+            
+            .rain div {
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: white;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 10px;
+                animation: fall linear infinite;
+                white-space: nowrap;
+            }
+            @keyframes fall {
+                0% { transform: translateY(0); }
+                100% { transform: translateY(100vh); }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navbar">
+            <a href="/archive">Archive</a>
+            <a href="https://r2s.bigcartel.com">Shop</a>
+            <a href="/about">About</a>
+        </div>
+     <div class="button-container">
+            <a href="#" class="button" onclick="toggleOverlay2()">Rise 2 Shine</a>
+        <div class="overlay2" id="overlay2" onclick="closeOverlay2(event)">
+            <div class="overlay2-content">
+                <span class="close-overlay2" onclick="toggleOverlay2()">×</span>
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/refuse2sink/refuse2sink.github.io/assets/aks-1.png" alt="illrise2shine" class="image-content">
+                </div>
+            </div>
+        </div>
+                <div class="footer">
+                    © R2S. All rights reserved. <a href="mailto:info.r2s.de@gmail.com">Contact</a>
+                </div>
+            
+                <script>
+                    function toggleOverlay2() {
+                        const overlay2 = document.getElementById('overlay2');
+                        overlay2.style.display = (overlay2.style.display === 'block') ? 'none' : 'block';
+                    }
+            
+                    function closeOverlay2(event) {
+                        if (event.target === event.currentTarget) {
+                            toggleOverlay2();
+                        }
+                    }
+            
+                    function toggleCarousel() {
+                        const carousel = document.getElementById('carousel');
+                        carousel.style.display = (carousel.style.display === 'block') ? 'none' : 'block';
+                    }
+            
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const carousel = document.getElementById('carousel');
+                        const images = carousel.querySelectorAll('img');
+                        let currentImageIndex = 0;
+            
+                        function showNextImage() {
+                            images[currentImageIndex].style.display = 'none';
+                            currentImageIndex = (currentImageIndex + 1) % images.length;
+                            images[currentImageIndex].style.display = 'block';
+                        }
+            
+                        images[currentImageIndex].style.display = 'block';
+                        setInterval(showNextImage, 3000);
+                    });
+                </script>
+    <div class="rain"></div>
+    <script>
+        const rainContainer = document.querySelector('.rain');
+        const snippets = [
+            '<!DOCTYPE html>', '<html lang="de">', '<head>', '<meta charset="UTF-8">', '<meta name="viewport" content="width=device-width, initial-scale=1.0">',
+            '<title>links</title>', '<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">',
+            '<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75,300&display=swap" rel="stylesheet">',
+            '<style>', 'body {', 'margin: 0;', 'padding: 20px;', 'box-sizing: border-box;', 'display: flex;', 'flex-direction: column;',
+            'justify-content: center;', 'align-items: center;', 'min-height: 100vh;', 'max-width: 100%;', 'background-color: #f9f9f9;',
+            'font-family: \'Pinyon Script\', cursive;', 'cursor: url(\'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black"><circle cx="12" cy="12" r="10"/></svg>\') 12 12, auto;',
+            '}', '.button-container {', 'text-align: center;', 'margin-bottom: 20px;', '}', '.button {', 'display: inline-block;',
+            'padding: 20px 40px;', 'border: 2px solid black;', 'background-color: white;', 'color: black;', 'font-size: 24px;', 'text-decoration: none;',
+            'transition: background-color 0.3s ease;', 'cursor: pointer;', '}', '.button:hover {', 'background-color: rgb(255, 0, 0);', 'color: white;',
+            '}', '.subtitle {', 'font-family: \'Open Sans\', sans-serif;', 'font-size: 14px;', 'margin-bottom: 20px;', '}', '</style>', '</head>', '<body>',
+            '<div class="button-container">', '<h1 style="font-size: 48px; margin-bottom: 20px;">@piquedeux</h1>', '<p class="subtitle">linktree, check out these links</p>',
+            '<a href="https://www.moritzgauss.xyz" class="button">Portfolio</a>', '<a href="https://www.r2shine.de" class="button">Rise 2 Shine</a>', '</div>', '</body>', '</html>'
+        ];
+
+        const createRainDrop = () => {
+            const rainDrop = document.createElement('div');
+            rainDrop.textContent = snippets[Math.floor(Math.random() * snippets.length)];
+            rainDrop.style.left = `${Math.random() * 100}vw`;
+            rainDrop.style.animationDuration = `${Math.random() * 5 + 3}s`;
+            rainDrop.style.fontSize = `${Math.random() * 8 + 8}px`;
+            rainContainer.appendChild(rainDrop);
+
+            rainDrop.addEventListener('animationend', () => {
+                rainDrop.remove();
+            });
+        };
+
+        setInterval(createRainDrop, 100);
+    </script>
+</body>
+</html>
+ <!--    
+.moods-button {
+                position: fixed;
+                top: 10px;
+                left: 10px;
+                padding: 10px 20px;
+                border: 2px solid black;
+                background-color: white;
+                color: black;
+                font-family: 'Pinyon Script', cursive;
+                font-size: 16px;
+                text-decoration: none;
+                cursor: pointer;
+                z-index: 1000;
+            }
+            .moods-button:hover {
+                background-color: rgb(255, 0, 0);
+                color: white;
+            }
+            .carousel {
+                display: none;
+                position: fixed;
+                bottom: 10px;
+                left: 10px;
+                width: 200px;
+                height: 250px;
+                overflow: hidden;
+                background-color: rgba(255, 255, 255, 0.9);
+                border: 2px solid black;
+                z-index: 1001;
+ }
+            .carousel img {
+                width: 100%;
+                height: auto;
+            }
+
+        </div>
+<div class="carousel" id="carousel">
+            <img src="https://i.pinimg.com/474x/c0/ab/2b/c0ab2b5660b2b0bbc20722f6f975617f.jpg" alt="Moods Image 1">
+            <img src="https://i.pinimg.com/474x/8e/4f/e5/8e4fe5d2becb35b553e858d71bd69dbc.jpg" alt="Moods Image 2">
+            <img src="https://i.pinimg.com/474x/32/ad/a5/32ada551c23e67bcee6ce8fecc499c54.jpg" alt="Moods Image 3">
+            <img src="https://i.pinimg.com/474x/19/71/72/19717256ac9200f9c42aba214285d614.jpg" alt="Moods Image 4">
+            <img src="https://i.pinimg.com/474x/74/24/54/74245471edbced171d81999b2f034d56.jpg" alt="Moods Image 5">
+            <img src="https://i.pinimg.com/474x/91/a5/22/91a52299712a904c6152fa267f4909c2.jpg" alt="Moods Image 6">
+            </div>
+<a href="#" class="moods-button" onclick="toggleCarousel()">let me see</a>
+--> 
