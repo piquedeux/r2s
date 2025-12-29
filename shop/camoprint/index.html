@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rise 2 Shine - Produktdetails</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'DM Sans', sans-serif;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            width: 100%;
+            padding: 10px;
+            background-color: white;
+            border-bottom: 2px solid black;
+            text-align: left;
+            font-family: 'Pinyon Script', cursive;
+            font-size: 36px;
+            color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .navbar {
+            position: fixed;
+            top: 10px;
+            right: 0;
+            padding: 10px 20px;
+            background-color: white;
+            border: 2px solid black;
+            font-size: 16px;
+            z-index: 1002;
+            margin-right: 10px;
+        }
+        .navbar a {
+            margin-left: 20px;
+            font-family: 'Pinyon Script', cursive;
+            text-decoration: none;
+            color: black;
+        }
+        .navbar a:hover {
+            color: red;
+        }
+        .content {
+            flex: 1;
+            padding: 100px 20px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .product-preview {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid black;
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 80%;
+            max-width: 600px;
+        }
+        .preview-canvas {
+            width: 100%;
+            height: 300px;
+            background-color: #f0f0f0;
+            border: 1px solid black;
+            margin-bottom: 20px;
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .form label {
+            font-family: 'Open Sans', sans-serif;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form input, .form select {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid black;
+            border-radius: 4px;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .form button {
+            padding: 10px;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .form button:hover {
+            background-color: red;
+        }
+        .footer {
+            padding: 10px 0;
+            font-family: 'DM Sans', sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: italic;
+            text-align: left;
+            color: black;
+            font-size: 10px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Produktdetails</div>
+    <div class="navbar">
+        <a href="/archive">Archive</a>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+    </div>
+    <div class="content">
+        <div class="product-preview">
+            <div class="preview-canvas" id="design-preview">Vorschau des Designs</div>
+            <form class="form" id="customization-form">
+                <label for="pattern">Muster:</label>
+                <select id="pattern" name="pattern">
+                    <option value="camo1">Camouflage Muster 1</option>
+                    <option value="camo2">Camouflage Muster 2</option>
+                    <option value="camo3">Camouflage Muster 3</option>
+                </select>
+                <label for="color">Farbpalette:</label>
+                <input type="color" id="color" name="color">
+                <label for="size">Größe:</label>
+                <select id="size" name="size">
+                    <option value="A4">A4</option>
+                    <option value="A3">A3</option>
+                    <option value="A2">A2</option>
+                </select>
+                <label for="email">E-Mail-Adresse:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Design senden</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer">&copy; R2S. all rights reserved. mg.</div>
+    <script>
+        const form = document.getElementById('customization-form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Das Design wurde erfolgreich gesendet!');
+        });
+    </script>
+</body>
+</html>
